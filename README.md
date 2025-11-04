@@ -34,9 +34,9 @@
 예시:
 
 ```bash
-ahreum-js → ahreum-js/feat/input
-ahreum-ts → ahreum-ts/feat/form-validation
-ahreum-next → ahreum-next/feat/image-upload
+ahreum-js → ahreum-js-feat/input
+ahreum-ts → ahreum-ts-feat/form-validation
+ahreum-next → ahreum-next-feat/image-upload
 ```
 
 - `JS`로 작업한 내용은 `ahreum-js`에 머지
@@ -146,7 +146,7 @@ console.log(formData);
 
 3. **Pull Request 생성**
 
-   - 예: `ahreum-js/feat/form` → `ahreum-js`
+   - 예: `ahreum-js-feat/form` → `ahreum-js`
    - PR 생성 시 Discord `#🔔form-pr-알림` 채널에 알림 확인
 
 4. **리뷰 및 수정**
