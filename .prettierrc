@@ -4,5 +4,7 @@
   "bracketSameLine": true,
   "jsxSingleQuote": true,
   "trailingComma": "es5",
-  "experimentalOperatorPosition": "start"
+  "experimentalOperatorPosition": "start",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/styles/base/base.css"
 }
