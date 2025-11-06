@@ -1,6 +1,6 @@
 # 🕺 폼 구현 실습하기 (진행 과정)
 
-- 작업 기간: 11.5 ~
+- 작업 기간: 11.5 ~ 11.6
 - JS 구현 진행 과정 정리
 
 ---
@@ -11,10 +11,10 @@
 
 - [x] vite 프로젝트 세팅
 - [x] Prettier 설정
-- [x] ESLint 설정
-- [ ] Husky 설정
-- [ ] commit lint 설정
 - [x] 파일 절대 경로(alias) 설정
+- [x] ESLint 설정
+- [x] Husky 설정
+- [x] commitlint 설정
 
 ## 1️⃣ vite 프로젝트 설치
 
@@ -88,3 +88,34 @@ npm i --D --save-exact eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin
 
 - unable to load resolver "alias" 에러가 발생해서 `eslint-import-resolver-vite` 패키지 설치해서 해결함
 - [참고>](https://github.com/eslint/eslint/discussions/14667#discussioncomment-12259265)
+
+**ESLint 설정**
+
+- ESLint 설정 추가 (recommended rule 주로 사용)
+
+---
+
+## 5️⃣ Husky 설정
+
+- git hook 사용을 위해 `husky` 패키지 설치
+- 스테이징 상태의 코드만 체크하기 위해서 `lint-staged` 패키지를 추가로 설치
+
+```bash
+npm install --save-dev husky lint-staged
+```
+
+- lint-staged 명령어 설정
+- pre-commit 명령어 설정
+
+---
+
+## 6️⃣ commitLint 설정
+
+- 커밋 메세지 제어를 위해 `@commitlint/cli` 패키지 설치
+
+```bash
+npm install --save-dev @commitlint/cli
+```
+
+- commit-msg 파일 명령어 설정
+- commitlint.config.js 설정 추가
