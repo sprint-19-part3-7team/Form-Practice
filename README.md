@@ -14,7 +14,7 @@
 - [ ] ESLint 설정
 - [ ] Husky 설정
 - [ ] commit lint 설정
-- [ ] 파일 절대 경로 설정
+- [x] 파일 절대 경로(alias) 설정
 
 ## 1️⃣ vite 프로젝트 설치
 
@@ -55,7 +55,15 @@ npm install --save-dev --save-exact prettier
 
 ---
 
-## 3️⃣ ESLint 설정
+## 3️⃣ 파일 절대 경로 설정
+
+- `jsconfig.json` 파일 생성 (VSCode 자동완성 설정을 위해 추가)
+  - `./src/*` alias 설정
+- `vite.config.js` alias 설정 추가
+
+---
+
+## 4️⃣ ESLint 설정
 
 **프리티어 설정 패키지 설치**
 
