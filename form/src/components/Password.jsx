@@ -1,34 +1,29 @@
-import { useState } from "react";
-import "./Password.css";
-
-const PasswordForm = () => {
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const onChangePassword = (e) => {
-    const value = e.target.value;
-    setPassword(value);
-
-    if (value === "") {
-      setError("");
-    } else if (value.length < 8) {
-      setError("비밀번호는 최소 8자 이상이어야 합니다.");
-    } else {
-      setError("");
-    }
-  };
-
+const PasswordForm = ({ password, error, onChangePassword }) => {
   return (
-    <div className="password-form">
+    <div className="flex flex-col w-full items-center">
       <input
-        onChange={onChangePassword}
-        placeholder={"비밀번호를 입력해주세요."}
         type="password"
         value={password}
-        className={error ? "error" : ""}
+        onChange={(e) => onChangePassword(e.target.value)}
+        placeholder="비밀번호를 입력해주세요."
+        className={`
+          w-full max-w-[720px]
+          py-3 px-4
+          rounded-lg
+          border ${error ? "border-danger" : "border-[#CCC]"}
+          bg-white
+          text-text font-pretendard text-[16px] leading-[26px]
+          placeholder:placeholder font-pretendard placeholder:text-[16px]
+          outline-none
+        `}
       />
-      {error && <p className="error-message">{error}</p>}
+      {error && (
+        <p className="text-danger font-pretendard text-[16px] leading-[26px] mt-1">
+          {error}
+        </p>
+      )}
     </div>
   );
 };
+
 export default PasswordForm;

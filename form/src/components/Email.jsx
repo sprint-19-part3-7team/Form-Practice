@@ -1,37 +1,29 @@
-import { useState } from "react";
-import "./Email.css";
-
-const EmailForm = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
-
-  const onChangeEmail = (e) => {
-    const value = e.target.value;
-    setEmail(value);
-
-    if (value === "") {
-      setError("");
-      return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) {
-      setError("이메일 형식에 맞게 작성해주세요.");
-    } else {
-      setError("");
-    }
-  };
-
+const EmailForm = ({ email, error, onChangeEmail }) => {
   return (
-    <div className="email-form">
+    <div className="flex flex-col w-full items-center">
       <input
-        onChange={onChangeEmail}
-        placeholder={"이메일을 입력해주세요."}
         type="email"
         value={email}
-        className={error ? "error" : ""}
+        onChange={(e) => onChangeEmail(e.target.value)}
+        placeholder="이메일을 입력해주세요."
+        className={`
+          w-full max-w-[720px]
+          py-3 px-4
+          rounded-lg
+          border ${error ? "border-danger" : "border-[#CCC]"}
+          bg-white
+          text-text font-pretendard text-[16px] leading-[26px]
+          placeholder:placeholder font-pretendard placeholder:text-[16px]
+          outline-none
+        `}
       />
-      {error && <p className="error-message">{error}</p>}
+      {error && (
+        <p className="text-danger font-pretendard text-[16px] leading-[26px] mt-1">
+          {error}
+        </p>
+      )}
     </div>
   );
 };
+
 export default EmailForm;

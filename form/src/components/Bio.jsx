@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./Bio.css";
 
 const BioForm = () => {
   const [bio, setBio] = useState("");
@@ -9,8 +8,20 @@ const BioForm = () => {
   };
 
   return (
-    <div className="bio-form">
+    <div className="flex flex-col w-full items-center">
       <textarea
+        className={`
+          w-full max-w-[720px]
+          h-[150px]
+          resize-none
+          py-3 px-4
+          rounded-lg
+          border border-[#CCC]
+          bg-white
+          text-text font-pretendard text-[16px] leading-[26px]
+          placeholder:placeholder font-pretendard placeholder:text-[16px]
+          outline-none
+        `}
         value={bio}
         onChange={onChangeBio}
         placeholder="자기소개를 입력해주세요."
@@ -18,5 +29,5 @@ const BioForm = () => {
     </div>
   );
 };
+
 export default BioForm;
-// 선택 입력 (입력하지 않아도 제출 가능)
