@@ -1,21 +1,62 @@
-@font-face {
-  font-family: "Pretendard";
-  src:
-    url("/fonts/Pretendard-Regular.woff2") format("woff2"),
-    url("/fonts/Pretendard-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Pretendard";
-  src:
-    url("/fonts/Pretendard-Bold.woff2") format("woff2"),
-    url("/fonts/Pretendard-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
+/* Tailwind 레이어 import - v4 방식 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 커스텀 폰트 */
+@font-face {
+  font-family: 'Pretendard';
+  src:
+    url('/fonts/woff2/Pretendard-Regular.woff2') format('woff2'),
+    url('/fonts/woff/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src:
+    url('/fonts/woff2/Pretendard-Bold.woff2') format('woff2'),
+    url('/fonts/woff/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 커스텀 테마 */
+@layer base {
+  :root {
+    --font-sans: 'Pretendard', sans-serif;
+
+    /* gray */
+    --color-gray-100: #f6f6f6;
+    --color-gray-200: #cccccc;
+    --color-gray-300: #939393;
+    --color-gray-400: #181818;
+
+    /* primary */
+    --color-primary: #9935ff;
+
+    /* error */
+    --color-error: #f74747;
+  }
+}
+
+/* 커스텀 유틸리티 */
+@layer utilities {
+  .font-bold-18 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+  .font-bold-16 {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+  .font-regular-16 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
