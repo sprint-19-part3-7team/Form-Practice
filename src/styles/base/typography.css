@@ -1,0 +1,20 @@
+@theme {
+  --font-sans: 'Pretendard', sans-serif;
+}
+
+@utility font-bold-18 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+@utility font-bold-16 {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+@utility font-regular-16 {
+  font-size: 16px;
+  line-height: 26px;
+}
