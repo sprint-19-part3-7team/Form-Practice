@@ -1,7 +1,9 @@
 import { useContext } from 'react';
+import { FormFieldContext } from '@/components/form/form-field/formFieldContext';
 
 const Input = ({ id, name, placeholder, type = 'text', context, ...props }) => {
-  const { error } = useContext(context);
+  const fieldContext = useContext(context || FormFieldContext);
+  const error = fieldContext?.error;
 
   return (
     <input
